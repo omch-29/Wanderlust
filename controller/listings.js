@@ -14,7 +14,7 @@ module.exports.renderNewForm = (req,res) =>{
 
 module.exports.showListing = async (req,res) =>{
     let {id} = req.params;
-    const listing = await Listing.findById(id).populate("reviews");
+    const listing = await Listing.findById(id).populate("reviews").populate("owner");
     res.render("listings/show.ejs", {listing});
 };
 
