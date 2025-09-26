@@ -76,7 +76,7 @@
         <% for(rev of listing.reviews) { %>
             <div class="card col-6 ms-3 mb-3">
                 <div class="card-title">
-                    <h5 class="card-title">@jab doe</h5>
+                    <h5 class="card-title">@<%= listing.owner.username %></h5>
                     <p>Posted by: <%= listing.owner.username %></p>
 
                     <p class="card-text"><%= rev.comment %></p>
