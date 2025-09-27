@@ -21,6 +21,7 @@ const {listingSchema, reviewSchema} = require("./schema.js");
 const Review = require("./models/reviews.js");
 const listingRouter = require("./routes/listing.js");
 const userRouter = require("./routes/user.js");
+const { isloggedin, isauthor } = require('./middleware.js');
 
 
 const dbUrl = process.env.ATLASDB_URL;
@@ -112,7 +113,7 @@ app.use((req, res, next) =>{
 app.use("/listings", listingRouter);
 app.use("/", userRouter);
 //Reviews
-app.post("/listings/:id/reviews", validateReview, wrapAsync (async (req, res) =>{
+app.post("/listings/:id/reviews",isloggedin, validateReview, wrapAsync (async (req, res) =>{
     let listing = await Listing.findById(req.params.id);
     let newreview =new Review(req.body.review);
     newreview.author = req.user._id;
@@ -125,6 +126,17 @@ app.post("/listings/:id/reviews", validateReview, wrapAsync (async (req, res) =>
     res.redirect(`/listings/${listing._id}`)
 }));
 
+//delete review
+app.delete("/listings/:id/reviews/:reviewId",isloggedin,isauthor, wrapAsync(async (req, res) =>{
+    let {id, reviewId} = req.params;
+     await Listing.findByIdAndUpdate(id, {$pull:{reviews: reviewId}});
+    await Review.findByIdAndDelete(reviewId);
+   req.flash("success", "Review Deleted!");
+    res.redirect(`/listings/${id}`);
+}
+
+)
+)
 
 //  app.all("/*", (req,res,next) =>{
 //      next(new ExpressError(404,"page not found!"));

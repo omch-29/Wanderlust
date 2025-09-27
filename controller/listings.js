@@ -41,7 +41,16 @@ module.exports.renderEdit = async (req, res) =>{
 
 module.exports.updateListing = async (req,res) =>{
     let {id} = req.params;
-   let listing = await Listing.findByIdAndUpdate(id, {...req.body.listing});
+   let listing =await Listing.findById(id);
+   if (!listing) {
+        req.flash("error", "Listing not found!");
+        return res.redirect("/listings");
+    }
+   if(!listing.owner || !listing.owner._id.equals(res.locals.currUser._id)){
+    req.flash("error", "you dont have permission to edit");
+     return res.redirect(`/listings/${id}`);
+   }
+   await Listing.findByIdAndUpdate(id, {...req.body.listing});
    if(typeof req.file != "undefined") {
         let url = req.file.path;
         let filename = req.file.filename;
@@ -54,6 +63,16 @@ module.exports.updateListing = async (req,res) =>{
 
 module.exports.deleteListing = async (req,res) =>{
     let {id} = req.params;
+    //let {id} = req.params;
+   let listing =await Listing.findById(id);
+   if (!listing) {
+        req.flash("error", "Listing not found!");
+        return res.redirect("/listings");
+    }
+   if(!listing.owner || !listing.owner._id.equals(res.locals.currUser._id)){
+    req.flash("error", "you dont have permission to delete");
+     return res.redirect(`/listings/${id}`);
+   }
     let deletedListing = await Listing.findByIdAndDelete(id);
     console.log(deletedListing);
     req.flash("success", "Listing Deleted!");
