@@ -115,10 +115,11 @@ app.use("/", userRouter);
 app.post("/listings/:id/reviews", validateReview, wrapAsync (async (req, res) =>{
     let listing = await Listing.findById(req.params.id);
     let newreview =new Review(req.body.review);
-
+    newreview.author = req.user._id;
+    await newreview.save();
     listing.reviews.push(newreview);
 
-    await newreview.save();
+    
     await listing.save();
     req.flash("success", "New Review created!");
     res.redirect(`/listings/${listing._id}`)
@@ -138,16 +139,3 @@ app.listen(3000, ()=>{
 console.log("listening on 3000");
 }
 );
-/*app.get("/testListing", async(req, res) =>{
-    let sampleListing = new Listing({
-        title: "My new Villa",
-        description: "By the beach",
-        price: 1200,
-        Location: "calcutta",
-        country: "India",
-    });
-
-    await sampleListing.save();
-    console.log("saved");
-    res.send("successful")
-});*/

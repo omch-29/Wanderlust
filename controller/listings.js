@@ -14,7 +14,10 @@ module.exports.renderNewForm = (req,res) =>{
 
 module.exports.showListing = async (req,res) =>{
     let {id} = req.params;
-    const listing = await Listing.findById(id).populate("reviews").populate("owner");
+    const listing = await Listing.findById(id).populate("reviews").populate("owner").populate({
+            path: "reviews",
+            populate: { path: "author" }  
+        });
     res.render("listings/show.ejs", {listing});
 };
 
