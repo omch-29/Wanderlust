@@ -21,11 +21,12 @@ const initdb = async() =>{
     return {
       ...obj,
       image: obj.image.url, 
-      owner: "68ceea190cbf0ffad7850828",
+      
       image: {
         filename: obj.image.filename,
         url: obj.image.url,
     },
+    owner: seedUserId,
   };
 });
 
