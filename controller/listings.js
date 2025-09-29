@@ -3,8 +3,27 @@ const { listingSchema } = require("../schema.js");
 
 
 module.exports.index = async (req, res) => {
-    const alllistings = await Listing.find({});
-    res.render("listings/index.ejs", {alllistings});
+    const { q } = req.query;
+  let listings;
+
+  if (q) {
+    // search case-insensitive in title or location
+    listings = await Listing.find({
+      $or: [
+        { title: { $regex: q, $options: "i" } },
+        { location: { $regex: q, $options: "i" } }
+      ]
+    });
+    if (listings.length === 0) {
+      req.flash("error", `We can’t find any listings for "${q}"`);
+      return res.redirect("/listings");
+    }
+  } else {
+    // no search → show all
+    listings = await Listing.find({});
+  }
+     const alllistings = await Listing.find({});
+    res.render("listings/index.ejs", {alllistings: listings, q, listings});
 };
 
 module.exports.renderNewForm = (req,res) =>{

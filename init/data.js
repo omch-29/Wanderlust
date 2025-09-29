@@ -116,7 +116,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 4000,
-    location: "Serengeti National Park",
+    location: "Serengeti Natnal Parkio",
     country: "Tanzania",
   },
   {
