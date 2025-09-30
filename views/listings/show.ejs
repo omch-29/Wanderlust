@@ -82,7 +82,7 @@
                     <h5>@<%=rev.author &&  rev.author.username ? rev.author.username : "Anonymous"%></h5>
 
                     <p class="card-text"><%= rev.comment %></p>
-                    <p class="starability-result card-text" data-rating="3"><%=rev.rating  %> </p>
+                    <p class="starability-result card-text" data-rating="<%= rev.rating %>"><%=rev.rating  %> </p>
                 </div>
                 <form action="/listings/<%= listing._id %>/reviews/<%= rev._id %>?_method=DELETE"  method="POST" class="mb-3" >
                     <button class="btn btn-sm btn-dark">Delete</button>
