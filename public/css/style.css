@@ -96,26 +96,3 @@
    padding-right: 0;
  }
 
-/* .starability-result {
-  max-width: 100%;  
-  overflow: hidden;
-  display: inline-block;
-  font-size: 1.5rem;  
-}
-
-
-@media (max-width: 576px) {
-  .starability-result {
-    font-size: 0.8rem;   
-    white-space: nowrap !important; 
-    display: block;    
-    margin-top: 5px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .starability-result {
-    font-size: 1.2rem;
-  }
-} */
