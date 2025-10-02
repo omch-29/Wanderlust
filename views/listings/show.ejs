@@ -79,7 +79,7 @@
             <div class="card col-6 ms-3 mb-3">
                 <div class="card-title">
                     <!-- <h5 class="card-title">@<%=listing.owner && listing.owner.username? listing.owner.username : "Unknown" %></h5> -->
-                    <h5>@<%=rev.author &&  rev.author.username ? rev.author.username : "Anonymous"%></h5>
+                    <h5 class="mt-2">Posted by @<%=rev.author &&  rev.author.username ? rev.author.username : "Anonymous"%></h5>
 
                     <p class="card-text"><%= rev.comment %></p>
                     <p class="starability-result card-text" data-rating="<%= rev.rating %>"><%=rev.rating  %> </p>
