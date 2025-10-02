@@ -7,7 +7,6 @@ module.exports.index = async (req, res) => {
   let listings;
 
   if (q) {
-    // search case-insensitive in title or location
     listings = await Listing.find({
       $or: [
         { title: { $regex: q, $options: "i" } },
@@ -19,7 +18,7 @@ module.exports.index = async (req, res) => {
       return res.redirect("/listings");
     }
   } else {
-    // no search → show all
+  
     listings = await Listing.find({});
   }
      const alllistings = await Listing.find({});

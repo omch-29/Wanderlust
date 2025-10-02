@@ -8,9 +8,9 @@
 
 class ExpressError extends Error {
     constructor(statusCode, message) {
-        super(message);           // ✅ pass message to Error constructor
+        super(message);           
         this.statusCode = statusCode;
-        this.name = "ExpressError"; // (optional, makes stack traces clearer)
+        this.name = "ExpressError";
     }
 }
 
