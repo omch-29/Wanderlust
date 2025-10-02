@@ -80,12 +80,12 @@
                 <div class="card-title">
                     <!-- <h5 class="card-title">@<%=listing.owner && listing.owner.username? listing.owner.username : "Unknown" %></h5> -->
                     <h5 class="mt-2">Posted by @<%=rev.author &&  rev.author.username ? rev.author.username : "Anonymous"%></h5>
-
+                    <p>posted at: <%= rev.createdAt %></p>
                     <p class="card-text"><%= rev.comment %></p>
                     <p class="starability-result card-text" data-rating="<%= rev.rating %>"><%=rev.rating  %> </p>
                 </div>
                 <form action="/listings/<%= listing._id %>/reviews/<%= rev._id %>?_method=DELETE"  method="POST" class="mb-3" >
-                    <button class="btn btn-sm btn-dark">Delete</button>
+                    <button class="btn btn-sm btn-dark mt-2">Delete</button>
                 </form>
                 
             </div>
