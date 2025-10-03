@@ -80,7 +80,7 @@
                 <div class="card-title">
                     <!-- <h5 class="card-title">@<%=listing.owner && listing.owner.username? listing.owner.username : "Unknown" %></h5> -->
                     <h5 class="mt-2">Posted by @<%=rev.author &&  rev.author.username ? rev.author.username : "Anonymous"%></h5>
-                    <p>posted at: <%= rev.createdAt.toLocaleString('en-IN', { 
+                    <p>posted on: <%= rev.createdAt.toLocaleString('en-IN', { 
       day: '2-digit', month: 'short', year: 'numeric' }) %></p>
                     <p class="card-text"><b><%= rev.comment %></b></p>
                     <p class="starability-result card-text" data-rating="<%= rev.rating %>"><%=rev.rating  %> </p>
