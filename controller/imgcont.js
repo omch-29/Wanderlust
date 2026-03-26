@@ -9,4 +9,5 @@ async function getImage(req, res){
 const getImage2 = async(req,res) =>{
 
 }
+
 module.exports = getImage,getImage2;
