@@ -3,8 +3,12 @@ const Listing = require('../models/listing');
 const User = require('../models/user');
 
 async function getImage(req, res){
+    try{
     const {username, password}=req.body;
-    return res.json("sucess").status(200);
+    if(username==pass) return res.json("sucess").status(200);
+    }catch(err){
+        return res.error(err);
+    }
 }
 
 const getImage2 = async(req,res) =>{
