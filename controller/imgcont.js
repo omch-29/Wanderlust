@@ -13,7 +13,7 @@ async function getImage(req, res){
 }
 
 const getImage2 = async(req,res) =>{
-     return
+     return res.status(401).json({message:"unaothorized"});
 }
 
 module.exports = getImage,getImage2;
