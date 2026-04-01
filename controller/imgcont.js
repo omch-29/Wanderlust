@@ -25,10 +25,12 @@ async function createInTrial(req,res){
         const {username,phone} = req.body;
         const user = await Trial.findOne({username});
         if(user) return res.status(409).json({message:"User already exists.."});
-        await Trial.create{
+        await Trial.create({
             username,
             phone
-        }
+        });
+        const trial = new Trial({username, phone});
+        await trial.save();
     }catch(err){
 
     }
