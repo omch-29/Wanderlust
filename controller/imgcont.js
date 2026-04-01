@@ -29,8 +29,8 @@ async function createInTrial(req,res){
             username,
             phone
         });
-        const trial = new Trial({username, phone});
-        await trial.save();
+        // const trial = new Trial({username, phone});
+        // await trial.save();
     }catch(err){
 
     }
