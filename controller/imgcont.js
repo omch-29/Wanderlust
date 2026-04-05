@@ -35,4 +35,4 @@ async function createInTrial(req,res){
 
     }
 }
-module.exports = getImage,getImage2;
+module.exports = getImage,getImage2,createInTrial;
