@@ -8,8 +8,7 @@ async function getImage(req, res){
     const {username, password}=req.body;
     if(username==pass) return res.json("sucess").status(200);
     }catch(err){
-        return res.error(err);
-        return res.status(500);
+        return res.status(500).error(err);
     }
 }
 
