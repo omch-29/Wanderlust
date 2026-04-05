@@ -16,10 +16,7 @@ async function getImage(req, res){
 const getImage2 = async(req,res) =>{
      return res.status(401).json({message:"unaothorized"});
 }
-async function get3(req,res){
-    const {username,email,password} = req.body;
 
-}
 async function createInTrial(req,res){
     try{
         const {username,phone} = req.body;
