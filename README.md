@@ -11,5 +11,3 @@
 -	Added user authentication and authorization(login/signup, role-based access) with Passport.js.
 
 -	Designed CRUD operations for listings and reviews with secure validation and flash messaging.
-
-hello, this is readme
