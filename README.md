@@ -13,4 +13,4 @@
 -	Designed CRUD operations for listings and reviews with secure validation and flash messaging.
 
 
-Live url deployed on Render.com , it may take time to render
+Live url deployed on Render.com , it may take time to render due to Render's free pack limitations
