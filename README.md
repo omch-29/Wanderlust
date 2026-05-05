@@ -22,7 +22,4 @@
 
 -	Integrated MongoDB atlas for cloud database storage and Cloudinary API for secure image uploads.
 
--	Added user authentication and authorization(login/signup, role-based access) with Passport.js.
-
--	Designed CRUD operations for listings and reviews with secure validation and flash messaging.
 
