@@ -15,11 +15,3 @@
 
 # Website link: https://wanderlust-project-qip3.onrender.com
 
-
-# Developed a full-stack web application 'Wanderlust' for property listings using Node.js, Express.js, Ejs.
-
--	Implemented MVC architecture for clean and scalable code structure.
-
--	Integrated MongoDB atlas for cloud database storage and Cloudinary API for secure image uploads.
-
-
