@@ -13,5 +13,3 @@
 -	Designed CRUD operations for listings and reviews with secure validation and flash messaging.
 
 
-# Website link: https://wanderlust-project-qip3.onrender.com
-
