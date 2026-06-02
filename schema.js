@@ -1,6 +1,6 @@
 const Joi = require('joi');
 const express = require("express");
-const 
+const dotenv = 
 
 module.exports.listingSchema = Joi.object({
     listing: Joi.object({
