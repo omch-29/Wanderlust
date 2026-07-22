@@ -143,7 +143,7 @@ const sampleListings = [
     location: "Fiji",
     country: "Fiji",
   },
-  
+
   {
     title: "Charming Cottage in the Cotswolds",
     description:
@@ -264,6 +264,7 @@ const sampleListings = [
     location: "Mykonos",
     country: "Greece",
   },
+  
   {
     title: "Eco-Friendly Treehouse Retreat",
     description:
