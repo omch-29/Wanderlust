@@ -143,6 +143,7 @@ const sampleListings = [
     location: "Fiji",
     country: "Fiji",
   },
+  
   {
     title: "Charming Cottage in the Cotswolds",
     description:
