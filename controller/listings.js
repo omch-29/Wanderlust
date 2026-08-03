@@ -82,7 +82,7 @@ module.exports.updateListing = async (req,res) =>{
 
 module.exports.deleteListing = async (req,res) =>{
     let {id} = req.params;
-    //let {id} = req.params;
+    //
    let listing =await Listing.findById(id);
    if (!listing) {
         req.flash("error", "Listing not found!");
