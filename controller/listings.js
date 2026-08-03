@@ -51,7 +51,7 @@ module.exports.createListing = async (req, res, next) =>{
     res.redirect("/listings");
 };
 
-//edit
+//edit page
 module.exports.renderEdit = async (req, res) =>{
      let {id} = req.params;
     const listing = await Listing.findById(id);
