@@ -265,6 +265,7 @@ const sampleListings = [
     country: "Greece",
   },
   
+  
   {
     title: "Eco-Friendly Treehouse Retreat",
     description:
